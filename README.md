@@ -1,8 +1,10 @@
 # **restaurant-voting** ![progress](http://www.yarntomato.com/percentbarmaker/button.php?barPosition=12.5&leftFill=%23FF0000 "progress")
-### _Демо проект_
+### Делаю по курсу Stepic [Java: Spring Boot 3.x + HATEOAS](https://stepik.org/course/90739/info).
 
-Делаю по курсу Stepic [Java: Spring Boot 3.x + HATEOAS](https://stepik.org/course/90739/info).
-
+**Возможности**
+- Создание и сохранение в БД пользователя
+- Присвоение пользователю роли (Админ / Пользователь)
+- Решение проблемы N+1 запросов
 
 **Стек технологий**
 
