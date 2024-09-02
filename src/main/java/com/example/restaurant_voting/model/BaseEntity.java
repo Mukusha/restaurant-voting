@@ -1,5 +1,6 @@
 package com.example.restaurant_voting.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.domain.Persistable;
@@ -28,7 +29,7 @@ public abstract class BaseEntity implements Persistable<Integer> {
         Assert.notNull(id, "Entity must have id");
         return id;
     }
-
+    @JsonIgnore  //Что бы HATEOAS не подтягивал это в HTTP запрос
     @Override
     public boolean isNew() {
         return id == null;
