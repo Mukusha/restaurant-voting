@@ -65,7 +65,7 @@ http://localhost:8080/api/users/1
 
 **Стек технологий**
 
-Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2, Jackson.
+Maven, Java 21, Spring Boot 3.3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2, Jackson.
 
 **<details><summary>Состав курса</summary>**
 
@@ -94,6 +94,9 @@ Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2, Jack
 - [Spring Data REST](https://spring.io/projects/spring-data-rest) - Spring Data REST строится на основе репозиториев Spring Data, анализирует модель домена вашего приложения и предоставляет HTTP-ресурсы на основе гипермедиа для агрегатов, содержащихся в модели.
 - [Понимание HATEOAS](http://spring-projects.ru/understanding/hateoas/) - HATEOAS (Hypermedia as the Engine of Application State) - это правило архитектуры REST приложения.
 Гипермедиа сайт предоставляет информацию для динамической навигации по REST интерфейсам сайта, включая гипермедиа-ссылки с ответами.
+- [Аутентификация в памяти](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/in-memory.html) - При помощи Spring Security аутентификация на основе имени пользователя и пароля, которые хранятся в памяти
+
+- [Encode with Spring Boot CLI](https://docs.spring.io/spring-security/reference/features/authentication/password-storage.html#authentication-password-storage-boot-cli) - как зашифровать пароль
 
 Прочее 
 - [Аннотации Jackson](https://nsergey.com/jackson-annotations/) - HATEOAS (Hypermedia as the Engine of Application State) - это правило архитектуры REST приложения.
