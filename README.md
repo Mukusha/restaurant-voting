@@ -7,6 +7,61 @@
 - Решение проблемы N+1 запросов
 - БД консоль по адресу http://localhost:8080/h2
 
+**<details><summary>Дока</summary>**
+
+```java
+Главная страница
+
+http://localhost:8080/api
+```
+
+```java
+User:
+
+{
+        "email": "test@test.com",
+        "firstName": "Test",
+        "lastName": "Test",
+        "password": "test",
+        "roles": [ "ROLE_USER"]
+}
+```
+**`GET`**
+> **/api** - главная страница
+
+> **/api/users** - все пользователя
+
+> **/api/users/{id}** - пользователь по id 
+
+> **/api/users/search** - страница на которой предлагают поискать пользователя по различным параметрам. Методы из репозитория.
+ 
+> **/api/users/search/by-email?email={email}** - вывести пользователе с такой электронной почтой
+
+> **/api/users/search/by-lastname?lastName={lastName}** -вывести пользователей с данной фамилией
+
+**`POST`**
+> **/api/users** - создает пользователя. Пример тела запроса:
+```java
+{
+        "email": "test@test.com",
+        "firstName": "Test",
+        "lastName": "Test",
+        "password": "test",
+        "roles": [ "ROLE_USER"]
+}
+```
+
+**`PATCH`**
+> **/api/users/{id}** - поменять параметра пользователя. Пример  запроса:
+```java
+http://localhost:8080/api/users/1
+{
+  "lastName": "User+Last"
+}
+```
+
+</details>
+
 **Стек технологий**
 
 Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2.
@@ -35,5 +90,8 @@ Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2.
 Гайды по Spring
 
 - [Spring Boot с базой данных H2](https://www.baeldung.com/spring-boot-h2-database).
-
+- [Spring Data REST](https://spring.io/projects/spring-data-rest) - Spring Data REST строится на основе репозиториев Spring Data, анализирует модель домена вашего приложения и предоставляет HTTP-ресурсы на основе гипермедиа для агрегатов, содержащихся в модели.
+- [Понимание HATEOAS](http://spring-projects.ru/understanding/hateoas/) - HATEOAS (Hypermedia as the Engine of Application State) - это правило архитектуры REST приложения.
+Гипермедиа сайт предоставляет информацию для динамической навигации по REST интерфейсам сайта, включая гипермедиа-ссылки с ответами.
+- 
 </details>

@@ -50,3 +50,7 @@ spring:
       settings.trace: false
       # отключить удаленный доступ
       settings.web-allow-others: false
+  data.rest:
+       #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
+    basePath: /api
+    returnBodyOnCreate: true
