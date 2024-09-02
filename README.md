@@ -1,4 +1,4 @@
-# **restaurant-voting** ![progress](http://www.yarntomato.com/percentbarmaker/button.php?barPosition=12.5&leftFill=%23FF0000 "progress")
+# **restaurant-voting** ![progress](http://www.yarntomato.com/percentbarmaker/button.php?barPosition=25&leftFill=%23FF0000 "progress")
 ### Делаю по курсу Stepic [Java: Spring Boot 3.x + HATEOAS](https://stepik.org/course/90739/info).
 
 **Возможности**
@@ -15,7 +15,7 @@ Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2.
 
 - [X] **Part_1** - Основы Spring Boot
 
-- [ ] **Part_2** - Работа с DB (H2, Spring Data JPA)
+- [X] **Part_2** - Работа с DB (H2, Spring Data JPA)
 
 - [ ] **Part_3** - Spring Data REST + HATEOAS
 
