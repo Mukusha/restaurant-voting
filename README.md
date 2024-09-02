@@ -5,6 +5,7 @@
 - Создание и сохранение в БД пользователя
 - Присвоение пользователю роли (Админ / Пользователь)
 - Решение проблемы N+1 запросов
+- БД консоль по адресу http://localhost:8080/h2
 
 **Стек технологий**
 
@@ -27,4 +28,12 @@ Maven, Java 21, Spring Boot 3.3, Spring Data Rest/HATEOAS, Lombok, JPA, H2.
 - [ ] **Part_7** - Обновление и рефакторинг. XSS. Удаление Spring Data Rest
 
 - [ ] **Part_8** - Миграция на Spring Boot 3.1.x. Update / Fix / Refactoring
+</details>
+
+**<details><summary>Материалы которые понадобились при написании кода</summary>**
+
+Гайды по Spring
+
+- [Spring Boot с базой данных H2](https://www.baeldung.com/spring-boot-h2-database).
+
 </details>
