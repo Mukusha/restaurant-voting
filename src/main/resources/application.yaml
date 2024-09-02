@@ -1,0 +1,52 @@
+#  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  application:
+    name: restaurant-voting
+  jpa:
+    # Видимость SQL запросов
+    show-sql: true
+    # проблема n+1 и отключение авто-коммитов в БД
+    open-in-view: false
+    #defer-datasource-initialization: true
+    hibernate:
+      #Каждый раз создает новую базу
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    #изменяет поведение Spring Boot по умолчанию и заполняет данные после того, как схема сгенерирована Hibernate
+    defer-datasource-initialization: true
+    properties:
+      #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        # Более читаемый формат SQL запросов
+        format_sql: true
+        # Решение проблемы N+1 запроса
+        default_batch_fetch_size: 20
+        # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
+        jdbc.batch_size: 20
+        # auto id - не раб(
+        # id.new_generator_mappings: false
+    datasource:
+      # ImMemory
+     # url: jdbc:h2:file:/mem/voting
+    #  tcp: jdbc:h2:tcp://localhost:9092//mem:voting
+      # Absolute path
+      #    url: jdbc:h2:C:/projects/bootjava/restorant-voting/db/voting
+      #    tcp: jdbc:h2:tcp://localhost:9092/C:/projects/bootjava/restorant-voting/db/voting
+      # Relative path form current dir
+      url: jdbc:h2:./db/voting
+      # Relative path from home
+      #    url: jdbc:h2:~/voting
+      #    tcp: jdbc:h2:tcp://localhost:9092/~/voting
+      driverClassName: org.h2.Driver
+      username: sa
+      password: sa
+  h2:
+    console:
+      enabled: true
+      # Можно уточнить адрес по которому откроется консоль
+      path: /h2-console
+      # предотвратить вывод трассировки
+      settings.trace: false
+      # отключить удаленный доступ
+      settings.web-allow-others: false
