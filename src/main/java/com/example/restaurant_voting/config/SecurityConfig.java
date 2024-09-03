@@ -7,7 +7,6 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -17,16 +16,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-  /*  @Bean //возвращаем кастомный MyUserDetailsService, который напишем далее
-    public UserDetailsService userDetailsService(){
-        return new MyUserDetailsService();
-    }*/
-    @Bean //Ставим степень кодировки, с которой кодировали пароль в базе
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder(5);
+    @Bean //Ставим степень кодировки, с которой кодировали пароль в базе. По умолчанию 10
+    public PasswordEncoder passwordEncoder() {
+        //   System.out.println("Пароль   "+new BCryptPasswordEncoder().encode("admin")+"   !!!");
+        return new BCryptPasswordEncoder();
     }
 
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(new MyUserDetailsService());
         provider.setPasswordEncoder(passwordEncoder());
@@ -55,18 +51,4 @@ public class SecurityConfig {
                 )
                 .build();
     }
-
- /*   @Bean
-    public UserDetailsManager users(DataSource dataSource) {
-        UserDetails user = AuthUser.builder()
-                .username("user")
-                .password(passwordEncoder().encode("password"))
-                .roles("USER")
-                .build();
-        JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
-        users.createUser(user);
-
-        return user;
-    }*/
-
 }
