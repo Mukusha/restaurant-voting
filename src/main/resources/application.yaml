@@ -4,20 +4,21 @@ spring:
     name: restaurant-voting
   jpa:
     # Видимость SQL запросов
-    show-sql: true
+   # show-sql: true
     # проблема n+1 и отключение авто-коммитов в БД
     open-in-view: false
     #defer-datasource-initialization: true
     hibernate:
       #Каждый раз создает новую базу
       ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.H2Dialect
+      #лучше читаемость sql
+    #database-platform: org.hibernate.dialect.H2Dialect
     #изменяет поведение Spring Boot по умолчанию и заполняет данные после того, как схема сгенерирована Hibernate
     defer-datasource-initialization: true
     properties:
       #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        #dialect: org.hibernate.dialect.H2Dialect
         # Более читаемый формат SQL запросов
         format_sql: true
         # Решение проблемы N+1 запроса
