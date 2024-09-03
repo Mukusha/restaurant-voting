@@ -1,5 +1,6 @@
 package com.example.restaurant_voting.config;
 
+import com.example.restaurant_voting.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -34,7 +35,8 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll()  //вход без авторизации
-                        // .requestMatchers("/api/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/api/account").hasAnyRole(Role.USER.name())
+                        .requestMatchers("/api/**").hasAnyRole(Role.ADMIN.name())
                         .anyRequest().authenticated() //с авторизацией и аутентификацией
                 )
                 .formLogin((form) -> form

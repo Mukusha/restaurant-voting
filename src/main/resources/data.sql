@@ -3,6 +3,6 @@ VALUES ('user@gmail.com', 'User_First', 'User_Last', '$2a$10$mx00qos2N2QrpdtImPQ
        ('admin@javaops.ru', 'Admin_First', 'Admin_Last', '$2a$10$1nrNgRswVYkCrt3DlY58RulST2jcIkzLcW1.1dKh/tdMlP5bds/SW');
 
 INSERT INTO USER_ROLE (ROLE, USER_ID)
-VALUES ('ROLE_USER', 1),
-       ('ROLE_ADMIN', 2),
-       ('ROLE_USER', 2);
+VALUES ('USER', 1),
+       ('ADMIN', 2),
+       ('USER', 2);
